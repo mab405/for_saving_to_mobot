@@ -1,0 +1,18 @@
+int32 GO_TO_STATION_1 = 1 #command for navigation service
+int32 GO_TO_STATION_2 = 2 #assumes robot is at station 1
+int32 GO_HOME = 3 #assumes robot is at station 2
+
+int32 GET_BLOCK_COORDS = 4 #request block coords; message to perception service; not really needed, since this service can assume the request
+
+int32 GRAB_BLOCK = 5 #request robot to grab block.  Coords of block must be in block_pose field of request
+int32 DROP_BLOCK = 6 #command to drop block, presumably at station 2
+
+
+int32 request_code
+geometry_msgs/PoseStamped grasp_block_pose
+---
+int32 FAILURE=0
+int32 SUCCESS=1
+
+int32 response_code
+geometry_msgs/PoseStamped perceived_block_pose
